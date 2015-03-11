@@ -42,8 +42,15 @@ app.use ('/comments.json', function (request, response, next) {
 })
 
 app.use (function (request, response) {
-    response.end ('Hello from Connect!\n')
+    response.end ('This is the ES6 (2015) version of the official React Tutorial! Nothing is configured for this URI.\n')
 })
 
-http.createServer (app).listen (3000)
+const httpServerOptions = {
+    host: 'localhost',
+    port: 3000
+}
+
+http.createServer (app).listen (httpServerOptions, function () {
+    console.log (`HTTP server listening on ${httpServerOptions.host}:${httpServerOptions.port}...`)
+})
 
