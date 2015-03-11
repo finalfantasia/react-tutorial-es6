@@ -7,7 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Abdussalam Abdrrahman",
+  "email": "abdusalam.abdurahman@gmail.com",
   "license": "MIT",
+  "engines": {
+    "iojs": ">=1.5.1",
+    "npm": ">=2.7.0"
+  },
   "dependencies": {
     "body-parser": "^1.12.0",
     "connect": "^3.3.4",
