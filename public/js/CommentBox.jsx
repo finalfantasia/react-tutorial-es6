@@ -9,8 +9,7 @@ class CommentBox extends React.Component {
     }
 
     componentDidMount () {
-        // setInterval (this.loadCommentsFromServer, this.props.pollInterval)
-        this.loadCommentsFromServer ()
+        setInterval (this.loadCommentsFromServer, this.props.pollInterval)
     }
 
     loadCommentsFromServer () {
