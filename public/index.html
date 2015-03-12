@@ -10,17 +10,12 @@
 </head>
 <body>
     <div id="content"></div>
-    <script src="scripts/Comment.jsx" type="text/jsx;harmony=true"></script>
-    <script src="scripts/CommentList.jsx" type="text/jsx;harmony=true"></script>
-    <script src="scripts/CommentForm.jsx" type="text/jsx;harmony=true"></script>
-    <script src="scripts/CommentBox.jsx" type="text/jsx;harmony=true"></script>
+    <script src="components/Comment.jsx" type="text/jsx;harmony=true"></script>
+    <script src="components/CommentList.jsx" type="text/jsx;harmony=true"></script>
+    <script src="components/CommentForm.jsx" type="text/jsx;harmony=true"></script>
+    <script src="components/CommentBox.jsx" type="text/jsx;harmony=true"></script>
 
-    <script type="text/jsx;harmony=true">
-        'use strict'
-
-        const content = document.querySelector ('#content')
-        React.render (<CommentBox url="comments.json" pollInterval={2000} />, content)
-    </script>
+    <script src="main.jsx" type="text/jsx"></script>
 </body>
 </html>
 
