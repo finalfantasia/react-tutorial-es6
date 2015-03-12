@@ -6,8 +6,8 @@ const serveStatic = require ('serve-static')
 const requestBodyParser = require ('body-parser')
 
 const store = [
-    {author: "Pete Hunt", text: "This is one comment"},
-    {author: "Jordan Walke", text: "This is *another* comment."}
+    {author: 'Pete Hunt', text: 'This is one comment.'},
+    {author: 'Jordan Walke', text: 'This is *another* comment.'}
 ]
 
 const app = connect ()
