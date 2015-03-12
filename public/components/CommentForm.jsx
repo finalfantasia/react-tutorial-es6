@@ -14,10 +14,7 @@ class CommentForm extends React.Component {
             return
         }
 
-        this.props.onCommentSubmit ({
-            author: author,
-            text: text
-        });
+        this.props.onCommentSubmit ({author, text});
 
         React.findDOMNode (this.refs.author).value = ''
         React.findDOMNode (this.refs.text).value = ''

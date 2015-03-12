@@ -4,9 +4,8 @@ class CommentList extends React.Component {
     }
 
     render () {
-        const commentNodes = this.props.data.map (comment => (
-                <Comment key={comment.id} author={comment.author}>{comment.text}</Comment>
-            )
+        const commentNodes = this.props.data.map (({author, text}, index) =>
+            <Comment key={index} author={author}>{text}</Comment>
         )
 
         return (

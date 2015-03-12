@@ -14,7 +14,7 @@ class CommentBox extends React.Component {
 
     loadCommentsFromServer () {
         $.getJSON (this.props.url).
-            done (data => this.setState ({data: data})).
+            done (data => this.setState ({data})).
             fail ((jqxhr, textStatus, error) => {
                 console.error (this.props.url, textStatus, error.toString ())
             })
