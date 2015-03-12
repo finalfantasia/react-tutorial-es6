@@ -6,8 +6,8 @@ const serveStatic = require ('serve-static')
 const requestBodyParser = require ('body-parser')
 
 const store = [
-    {id: 1, author: "Pete Hunt", text: "This is one comment"},
-    {id: 2, author: "Jordan Walke", text: "This is *another* comment."}
+    {author: "Pete Hunt", text: "This is one comment"},
+    {author: "Jordan Walke", text: "This is *another* comment."}
 ]
 
 const app = connect ()
@@ -15,7 +15,7 @@ const app = connect ()
 app.use (serveStatic ('public', {index: 'index.html'}))
 app.use (requestBodyParser.json ())
 
-app.use ('/comments.json', function (request, response, next) {
+app.use ('/comments.json', function (request, response) {
     response.setHeader ('Content-Type', 'application/json; charset=utf-8')
 
     switch (request.method) {
@@ -25,11 +25,7 @@ app.use ('/comments.json', function (request, response, next) {
             break
         }
         case 'POST': {
-            const newComment = {
-                id: store.length + 1,
-                author: request.body.author,
-                text: request.body.text
-            }
+            const newComment = request.body;
 
             store.push (newComment)
             response.end (JSON.stringify (newComment), 'utf-8')
@@ -37,8 +33,6 @@ app.use ('/comments.json', function (request, response, next) {
             break
         }
     }
-
-    next ()
 })
 
 app.use (function (request, response) {
